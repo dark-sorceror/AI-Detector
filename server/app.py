@@ -9,7 +9,8 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 CORS(app)
 
-client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+model = genai.GenerativeModel('gemini-2.5-flash')
 
 @app.route('/analyze', methods=['POST'])
 def analyze_content():
