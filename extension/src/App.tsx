@@ -70,14 +70,10 @@ function App() {
         setStatus("Analyzing with AI...");
 
         try {
-            const response = await fetch(
-                "https://seal-app-d2359.ondigitalocean.app/analyze",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ text: tweetText }),
+            const response = await fetch("https://seal-app-d2359.ondigitalocean.app/analyze", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
                 },
             );
 
